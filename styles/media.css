@@ -47,6 +47,7 @@
     }
 
     #close_menu{
+        display: flex;
         font-size: 38px;
         margin-top: 20px;
         padding-left: 10px;
