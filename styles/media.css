@@ -1,0 +1,191 @@
+@media screen and (max-width: 760px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        border: none;
+    }
+
+    .desktop-menu {
+        margin-right: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end; /* Itens começam alinhados à direita */
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 30%; /* Altura total da viewport */
+        width: 50%; /* Largura inicial do menu */
+        border-bottom-left-radius: 80px 80px;
+        border: 1px solid black;
+        background-color: #fff; /* Cor de fundo */
+        transform: translateX(100%); /* Esconde inicialmente o menu fora da tela */
+        transition: transform 0.3s ease-in-out; /* Transição suave */
+        z-index: 100;
+    }
+
+    #subtitulo_inicio {
+        background-color: white;
+        border-radius: 100px;
+    }
+    
+    .desktop-menu.active {
+        transform: translateX(0); /* Mostra o menu deslizando para a esquerda */
+    }
+    
+    .desktop-menu a {
+        text-decoration: none;
+        color: #000; /* Cor dos itens do menu */
+        font-size: 18px; /* Tamanho da fonte */
+        margin: 0px 0; /* Espaçamento entre os itens do menu */
+        transition: opacity 0.3s ease-in-out; /* Transição suave para a opacidade */
+    }
+    
+    .desktop-menu a:hover {
+        opacity: 0.7; /* Opacidade reduzida ao passar o mouse */
+    }
+
+    #close_menu{
+        font-size: 38px;
+        margin-top: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-right: 150px;
+    }
+
+    #div_logo {
+        /* Estilo do div_logo, se necessário */
+    }
+
+    #logo_leticia {
+        width: 60px;
+    }
+    
+    header {
+        background-color: #ffe4ea;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        max-height: 70px;
+        margin: 0 auto;
+        width: 100%;
+        padding-top: 10px;
+        padding: 10px; /* Ajuste o padding conforme necessário */
+    }
+
+    h1 {
+        margin: 10px;
+        font-weight: 200;
+    }
+
+    #title {
+        text-align: center; /* Centraliza o texto */
+        font-size: 10px; /* Ajuste o tamanho da fonte conforme necessário */
+        flex-direction: column;
+        line-height: 10px;
+    }
+
+    /* Mostrar o botão de menu */
+    .menu-button {
+        background: none;
+        border: none;
+        display: block; /* Garante que o botão seja exibido */
+        margin-right: 10px; /* Espaçamento do lado direito */
+    }
+
+    #btt_menu {
+        width: 35px;
+    }
+
+    #article_leticia_main {
+        display: none;
+    }
+
+    #txt_entrada {
+        text-align: center;
+        margin-top: 0px;
+        width: 100%;
+        height: 100%;
+    }
+
+    #h2_entrada {
+        font-size: 20px;
+        margin-top: 26px;
+    }
+
+    #inicio {
+        position: flex;
+        flex-direction: column;
+        height: 420px;
+        margin-top: 0px;
+        padding: 20px;
+        height: 70%;
+    }
+
+    #atendimentos {
+        height: 100%;
+    }
+
+    #tipo_atendimentos {
+        display: grid;
+        grid-template-columns: 200px 200px;
+        grid-row: auto auto;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    .article_atendimento {
+        width: 150px;
+    }
+
+    .img_atendimento {
+        width: 50px;
+    }
+
+    .txt_atendimento {
+        font-size: 11px;
+        text-align: center;
+    }
+
+    #sobre {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #article_leticia_main_mobile {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #leticia_main_mobile {
+        display: flex;
+        width: 50%;
+    }
+
+    #h2_sobre {
+        border-top: 1px solid #582430;
+        font-size: 26px;
+        text-align: center;
+        width: 100%;
+    }
+
+    #h3_sobre {
+        text-align: center;
+        padding: 10px;
+    }
+
+    #aside_sobre {
+        width: 90%;
+        padding: 10px;
+    }
+
+    #img_contato{
+        width: 70px;
+    }
+}

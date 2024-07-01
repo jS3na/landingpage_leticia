@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/media.css">
+    <link rel="shortcut icon" href="./components/images/logo_leticia.ico" type="image/x-icon">
+    <title>Landing Page</title>
+</head>
+<body>
+
+    <header>
+
+        <div id="div_logo">
+            <img id="logo_leticia" src="./components/images/logo_leticia.PNG" alt="">
+        </div>
+
+        <div id="title">
+            <h1>Fisioterapia</h1>
+            <h1>Domiciliar</h1>
+        </div>
+
+        <ul class="desktop-menu">
+            <p onclick="toggleMenu()" id="close_menu">></p>
+            <a onclick="scrollToSection('#atendimentos'); toggleMenu()"><li>Atendimentos</li></a>
+            <a onclick="scrollToSection('#sobre'); toggleMenu()"><li>Sobre</li></a>
+            <a onclick="scrollToSection('#contato'); toggleMenu()"><li>Contato</li></a>
+        </ul>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            <img id="btt_menu" src="./components/images/menu-4-48.png" alt="">
+        </button>
+
+    </header>
+
+
+    <main id="inicio">
+        <aside>
+
+            <div id="txt_entrada">
+                <h2 id="h2_entrada">Recupere-se com tranquilidade</h2>
+                <h2 id="h2_entrada">no conforto do seu <span>Lar</span></h2>
+                
+                <p id="subtitulo_inicio">Atendimentos domiciliares personalizados com uma fisioterapeuta com mais de 5 anos de experiência,
+                    para promover a sua saúde e bem-estar, 
+                    com a comodidade e a segurança que você merece.</p>
+                
+            </div>
+
+        </aside>
+
+        <article id="article_leticia_main">
+            <img id="leticia_main" src="./components/images/leticia_main.png" alt="Imagem da mulher meditando">
+        </article>
+    </main>
+
+    <section id="atendimentos">
+        <h3>Atendimentos</h3>
+
+        <div id="tipo_atendimentos">
+
+            <article class="article_atendimento">
+                <img class="img_atendimento" src="./components/images/pulmao.PNG" alt="">
+                <p class="txt_atendimento">Reabilitação cardiorespiratória para DPOC e pós COVID</p>
+            </article>
+
+            <article class="article_atendimento">
+                <img class="img_atendimento" src="./components/images/reabilitacao_motora.PNG" alt="">
+                <p class="txt_atendimento">Reabilitação Motora</p>
+            </article>
+
+            <article class="article_atendimento">
+                <img class="img_atendimento" src="./components/images/tensoes.PNG" alt="">
+                <p class="txt_atendimento">Tratamento de dores e tensões musculares</p>
+            </article>
+
+            <article class="article_atendimento">
+                <img class="img_atendimento" src="./components/images/cerebro.PNG" alt="">
+                <p class="txt_atendimento">Reabilitação neurológica para pacientes com Parkinson e pós AVC</p>
+            </article>
+        </div>
+
+    </section>
+
+    <section id="sobre">
+
+        <aside id="aside_sobre">
+            <h3>Sobre</h3>
+
+            <article id="article_leticia_main_mobile">
+                <img id="leticia_main_mobile" src="./components/images/leticia_main_mobile.png" alt="Imagem da mulher meditando">
+            </article>
+
+            <h2 id="h2_sobre">Sou Letícia Passos, </h2>
+            <h3 id="h3_sobre">Fisioterapeuta intensivista com mais de 6 anos de experiência, em áreas como UTI, 
+                reabilitação Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Dolor ipsa consequuntur beatae praesentium voluptas quisquam ipsam neque ipsum expedita. 
+                Nihil consequatur voluptatem corrupti fugiat possimus aperiam animi, facilis architecto 
+                repudiandae?
+            </h3>
+        </aside>
+
+        <section id="section_contato">
+            <h3>Contato</h3>
+
+            <div id="div_contato">
+                    
+                <article id="contato">
+                    <a href="https://api.whatsapp.com/send?phone=5586999590470&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos!" target="_blank">
+                        <img id="img_contato" src="./components/images/whatsapp-64.png" alt="">
+                    </a>
+                    <p>(86) 9 9959-0470</p>
+                </article>
+
+                <article id="contato">
+                    <img id="img_contato" src="./components/images/email-5-64.png" alt="">
+                    <p>leticia.senap@gmail.com</p>
+                </article>
+            </div>
+
+        </section>
+
+    </section>
+
+</body>
+<script>
+    function checkScroll() {
+    const elements = document.querySelectorAll('.article_atendimento');
+    elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+        
+        if (elementPosition < screenHeight * 0.75) {
+            element.classList.add('active');
+        }
+    });
+}
+
+function scrollToSection(sectionId) {
+    const section = document.querySelector(sectionId);
+    window.scrollTo({
+        top: section.offsetTop,
+        behavior: 'smooth'
+    });
+}
+
+function toggleMenu() {
+    const header = document.querySelector(".desktop-menu");
+    header.classList.toggle('active'); // Adiciona ou remove a classe 'active' do menu
+}
+
+window.addEventListener('scroll', checkScroll);
+window.addEventListener('resize', checkScroll);
+
+// Chama a função para verificar inicialmente ao carregar a página
+checkScroll();
+
+</script>
+</html>
