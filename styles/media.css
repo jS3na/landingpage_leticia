@@ -61,6 +61,7 @@
 
     #logo_leticia {
         width: 60px;
+        filter: drop-shadow(2px 0px 2px #22222279); 
     }
     
     header {
@@ -167,6 +168,7 @@
     #leticia_main_mobile {
         display: flex;
         width: 50%;
+        filter: drop-shadow(2px 0px 2px #222); 
     }
 
     #h2_sobre {
