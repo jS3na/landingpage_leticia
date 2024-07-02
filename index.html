@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <link rel="shortcut icon" href="./components/images/logo_leticia.ico" type="image/x-icon">
     <title>Letícia Passos</title>
 </head>
+
 <body>
 
     <header>
@@ -20,14 +22,19 @@
 
         <div id="title">
             <h1>Fisioterapia</h1>
-            <h1>Domiciliar</h1>
         </div>
 
         <ul class="desktop-menu">
             <p onclick="toggleMenu()" id="close_menu">></p>
-            <a onclick="scrollToSection('#atendimentos'); toggleMenu()"><li>Atendimentos</li></a>
-            <a onclick="scrollToSection('#sobre'); toggleMenu()"><li>Sobre</li></a>
-            <a onclick="scrollToSection('#contato'); toggleMenu()"><li>Contato</li></a>
+            <a onclick="scrollToSection('#atendimentos'); toggleMenu()">
+                <li>Atendimentos</li>
+            </a>
+            <a onclick="scrollToSection('#sobre'); toggleMenu()">
+                <li>Sobre</li>
+            </a>
+            <a onclick="scrollToSection('#contato'); toggleMenu()">
+                <li>Contato</li>
+            </a>
         </ul>
 
         <button class="menu-button" onclick="toggleMenu()">
@@ -44,15 +51,36 @@
                 <h2 id="h2_entrada">Recupere-se com </h2>
                 <h2 id="h2_entrada"><span>tranquilidade</span></h2>
                 <h2 id="h2_entrada">no conforto do seu <span>Lar</span></h2>
-                
-                <p id="subtitulo_inicio">Atendimentos domiciliares personalizados com uma fisioterapeuta com mais de 5 anos de experiência,
-                    para promover a sua saúde e bem-estar, 
-                    com a comodidade e a segurança que você merece.</p>
 
-                <a href="https://api.whatsapp.com/send?phone=5586999590470&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos!">
+                <p id="subtitulo_inicio">Atendimento fisioterapêutico domiciliar com praticidade, 
+                    atendimento individual, comodidade e horário flexível.</p>  
+
+                <div class="container">
+                    <div class="image fade">
+                        <img id="img_slide" src="./components/images/idoso_cansado.jpg" width="100%">
+                    </div>
+                    <div class="image fade">
+                        <img id="img_slide" src="./components/images/jovem_perna.jpg" width="100%">
+                    </div>
+                    <div class="image fade">
+                        <img id="img_slide" src="./components/images/massagem_pescoco.jpg" width="100%">
+                    </div> 
+
+                    <a id="prev" onclick="show_slide(-1)">&#10094;</a>
+                    <a id="next" onclick="show_slide(1)">&#10095;</a>
+
+                    <div class="dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+
+                <a
+                    href="https://api.whatsapp.com/send?phone=5586999590470&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos!">
                     <button class="animated-border-button">Saiba Mais</button>
                 </a>
-                
+
             </div>
 
         </aside>
@@ -96,15 +124,17 @@
             <h3>Sobre</h3>
 
             <article id="article_leticia_main_mobile">
-                <img id="leticia_main_mobile" src="./components/images/leticia_main_mobile.png" alt="Imagem da mulher meditando">
+                <img id="leticia_main_mobile" src="./components/images/leticia_main_mobile.png"
+                    alt="Imagem da mulher meditando">
             </article>
 
             <h2 id="h2_sobre">Sou Letícia Passos, </h2>
-            <h3 id="h3_sobre">Fisioterapeuta intensivista com mais de 6 anos de experiência, em áreas como UTI, 
-                reabilitação Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Dolor ipsa consequuntur beatae praesentium voluptas quisquam ipsam neque ipsum expedita. 
-                Nihil consequatur voluptatem corrupti fugiat possimus aperiam animi, facilis architecto 
-                repudiandae?
+            <h3 id="h3_sobre">Fisioterapeuta há 10 anos, titulada em Terapia Intensiva Adulto - 
+                COFFITO/ ASSOBRAFIR. Atuação em UTI, Reabilitação Cardiorrespiratória, Pós-COVID, 
+                Fisioterapia Neurofuncional com ênfase em Doença de Parkinson, AVC, Traumato-Ortopedia, 
+                Terapia Manual com ênfase em dores musculares e Geriatria.
+                <br><br>
+                CREFITO 197028-7
             </h3>
         </aside>
 
@@ -112,9 +142,10 @@
             <h3>Contato</h3>
 
             <div id="div_contato">
-                    
+
                 <article id="contato">
-                    <a href="https://api.whatsapp.com/send?phone=5586999590470&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos!" target="_blank">
+                    <a href="https://api.whatsapp.com/send?phone=5586999590470&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20atendimentos!"
+                        target="_blank">
                         <img id="img_contato" src="./components/images/whatsapp-64.png" alt="">
                     </a>
                     <p>(86) 9 9959-0470</p>
@@ -132,36 +163,74 @@
 
 </body>
 <script>
+
+    var index = 0;
+
+    show_slide = (i) => {
+        //increment/decrement slide index
+        index += i;
+
+        //grab all the images
+        var images = document.getElementsByClassName("image");
+        //grab all the dots
+        var dots = document.getElementsByClassName("dot");
+
+        // hide all the images
+        for (i = 0; i < images.length; i++)
+            images[i].style.display = "none";
+
+        // remove the active class from the dot
+        for (i = 0; i < dots.length; i++)
+            dots[i].className = dots[i].className.replace(" active", "");
+
+        // if index is greater than the amount of images (set it to zero)
+        if (index > images.length - 1)
+            index = 0;
+
+        // if index is less than zero (set it to the length of images)
+        if (index < 0)
+            index = images.length - 1;
+
+        // only display the image that's next or previous
+        images[index].style.display = "block";
+        // only make the current dot active
+        dots[index].className += " active";
+
+    }
+
+    window.addEventListener("onload", show_slide(index));
+
     function checkScroll() {
-    const elements = document.querySelectorAll('.article_atendimento');
-    elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const screenHeight = window.innerHeight;
-        
-        if (elementPosition < screenHeight * 0.75) {
-            element.classList.add('active');
-        }
-    });
-}
+        const elements = document.querySelectorAll('.article_atendimento');
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenHeight = window.innerHeight;
 
-function scrollToSection(sectionId) {
-    const section = document.querySelector(sectionId);
-    window.scrollTo({
-        top: section.offsetTop,
-        behavior: 'smooth'
-    });
-}
+            if (elementPosition < screenHeight * 0.75) {
+                element.classList.add('active');
+            }
+        });
+    }
 
-function toggleMenu() {
-    const header = document.querySelector(".desktop-menu");
-    header.classList.toggle('active'); // Adiciona ou remove a classe 'active' do menu
-}
+    function scrollToSection(sectionId) {
+        const section = document.querySelector(sectionId);
+        window.scrollTo({
+            top: section.offsetTop,
+            behavior: 'smooth'
+        });
+    }
 
-window.addEventListener('scroll', checkScroll);
-window.addEventListener('resize', checkScroll);
+    function toggleMenu() {
+        const header = document.querySelector(".desktop-menu");
+        header.classList.toggle('active'); // Adiciona ou remove a classe 'active' do menu
+    }
 
-// Chama a função para verificar inicialmente ao carregar a página
-checkScroll();
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('resize', checkScroll);
+
+    // Chama a função para verificar inicialmente ao carregar a página
+    checkScroll();
 
 </script>
+
 </html>

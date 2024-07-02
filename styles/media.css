@@ -11,38 +11,50 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-end; /* Itens começam alinhados à direita */
+        align-items: flex-end;
+        /* Itens começam alinhados à direita */
         position: fixed;
         top: 0;
         right: 0;
-        height: 30%; /* Altura total da viewport */
-        width: 50%; /* Largura inicial do menu */
+        height: 30%;
+        /* Altura total da viewport */
+        width: 50%;
+        /* Largura inicial do menu */
         border-bottom-left-radius: 80px 80px;
         border: 1px solid black;
-        background-color: #fff; /* Cor de fundo */
-        transform: translateX(100%); /* Esconde inicialmente o menu fora da tela */
-        transition: transform 0.3s ease-in-out; /* Transição suave */
+        background-color: #fff;
+        /* Cor de fundo */
+        transform: translateX(100%);
+        /* Esconde inicialmente o menu fora da tela */
+        transition: transform 0.3s ease-in-out;
+        /* Transição suave */
         z-index: 100;
     }
 
-    
+
     .desktop-menu.active {
-        transform: translateX(0); /* Mostra o menu deslizando para a esquerda */
-    }
-    
-    .desktop-menu a {
-        text-decoration: none;
-        color: #000; /* Cor dos itens do menu */
-        font-size: 18px; /* Tamanho da fonte */
-        margin: 0px 0; /* Espaçamento entre os itens do menu */
-        transition: opacity 0.3s ease-in-out; /* Transição suave para a opacidade */
-    }
-    
-    .desktop-menu a:hover {
-        opacity: 0.7; /* Opacidade reduzida ao passar o mouse */
+        transform: translateX(0);
+        /* Mostra o menu deslizando para a esquerda */
     }
 
-    #close_menu{
+    .desktop-menu a {
+        text-decoration: none;
+        color: #000;
+        /* Cor dos itens do menu */
+        font-size: 18px;
+        /* Tamanho da fonte */
+        margin: 0px 0;
+        /* Espaçamento entre os itens do menu */
+        transition: opacity 0.3s ease-in-out;
+        /* Transição suave para a opacidade */
+    }
+
+    .desktop-menu a:hover {
+        opacity: 0.7;
+        /* Opacidade reduzida ao passar o mouse */
+    }
+
+    #close_menu {
         display: flex;
         font-size: 38px;
         margin-top: 20px;
@@ -57,9 +69,9 @@
 
     #logo_leticia {
         width: 60px;
-        filter: drop-shadow(2px 0px 2px #22222279); 
+        filter: drop-shadow(2px 0px 2px #22222279);
     }
-    
+
     header {
         background-color: #ffe4ea;
         display: flex;
@@ -71,7 +83,8 @@
         margin-top: 10px;
         width: 90%;
         padding-top: 10px;
-        padding: 10px; /* Ajuste o padding conforme necessário */
+        padding: 10px;
+        /* Ajuste o padding conforme necessário */
     }
 
     h1 {
@@ -80,8 +93,10 @@
     }
 
     #title {
-        text-align: center; /* Centraliza o texto */
-        font-size: 10px; /* Ajuste o tamanho da fonte conforme necessário */
+        text-align: center;
+        /* Centraliza o texto */
+        font-size: 10px;
+        /* Ajuste o tamanho da fonte conforme necessário */
         flex-direction: column;
         line-height: 10px;
     }
@@ -90,8 +105,10 @@
     .menu-button {
         background: none;
         border: none;
-        display: block; /* Garante que o botão seja exibido */
-        margin-right: 10px; /* Espaçamento do lado direito */
+        display: block;
+        /* Garante que o botão seja exibido */
+        margin-right: 10px;
+        /* Espaçamento do lado direito */
     }
 
     #btt_menu {
@@ -132,7 +149,7 @@
         border-radius: 35px;
         box-shadow: 10px #000;
     }
-    
+
     .animated-border-button::before {
         content: "";
         position: absolute;
@@ -147,7 +164,7 @@
         border-radius: 35px;
         animation: rotate 6s linear infinite;
     }
-    
+
     .animated-border-button:hover {
         color: #ffffff;
         background-color: #fff;
@@ -181,6 +198,7 @@
 
     .article_atendimento {
         width: 150px;
+        background-color: #ffe4ea;
     }
 
     .img_atendimento {
@@ -208,7 +226,7 @@
     #leticia_main_mobile {
         display: flex;
         width: 50%;
-        filter: drop-shadow(2px 0px 2px #222); 
+        filter: drop-shadow(2px 0px 2px #222);
     }
 
     #h2_sobre {
@@ -228,7 +246,7 @@
         padding: 10px;
     }
 
-    #img_contato{
+    #img_contato {
         width: 70px;
     }
 }
