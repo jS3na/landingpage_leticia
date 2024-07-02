@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 body {
+    display: flex;
+    flex-direction: column;
     background-image: radial-gradient(#582430 1px, transparent 1px);
     background-size: 37px 37px;
     background-color: #ffffff;
@@ -9,6 +11,8 @@ body {
     font-family: poppinsregular;
     padding: 0;
     margin: 0 auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu-button{
@@ -22,10 +26,17 @@ header {
     justify-content: space-between;
     align-items: center;
     max-width: 1560;
-    margin: 0 auto;
-    width: 100%;
+    margin: 20px;
+    width: 90%;
+    border-radius: 20px;
+    border: 1px solid;
     height: 100%;
     padding-top: 10px;
+}
+
+#logo_leticia {
+    width: 140px;
+    filter: drop-shadow(2px 0px 2px #22222279); 
 }
 
 .desktop-menu{
@@ -80,7 +91,6 @@ h1 {
     background-size: 37px 37px;
     background-color: #ffffff;
     width: 100%;
-    border-top: 1px solid;
     border-bottom: 1px solid;
     display: flex;
     flex-direction: row;
@@ -125,6 +135,7 @@ span {
     flex-direction: column;
     align-items: center;
     padding-top: 10px;
+    width: 100%;
 }
 
 #tipo_atendimentos {

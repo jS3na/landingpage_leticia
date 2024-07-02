@@ -25,10 +25,6 @@
         z-index: 100;
     }
 
-    #subtitulo_inicio {
-        background-color: white;
-        border-radius: 100px;
-    }
     
     .desktop-menu.active {
         transform: translateX(0); /* Mostra o menu deslizando para a esquerda */
@@ -72,8 +68,8 @@
         align-items: center;
         max-width: 1200px;
         max-height: 70px;
-        margin: 0 auto;
-        width: 100%;
+        margin-top: 10px;
+        width: 90%;
         padding-top: 10px;
         padding: 10px; /* Ajuste o padding conforme necessário */
     }
@@ -113,9 +109,25 @@
         height: 100%;
     }
 
+    #subtitulo_inicio {
+        background-color: white;
+        border-radius: 100px;
+    }
+
+    #saiba_mais{
+        margin: 15px;
+        margin-top: 27px;
+        background-color: #ff0037;
+        width: 190px;
+        height: 60px;
+        font-size: large;
+        color: white;
+        border-radius: 15px;
+    }
+
     #h2_entrada {
-        font-size: 20px;
-        margin-top: 26px;
+        font-size: 30px;
+        margin-top: 30px;
     }
 
     #inicio {
