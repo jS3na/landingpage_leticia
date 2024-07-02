@@ -315,6 +315,7 @@ span {
 .article_atendimento.active {
     opacity: 1;
     transform: translateY(0);
+    background-color: #ffe4ea;
 }
 
 .img_atendimento {
@@ -397,4 +398,10 @@ span {
 #img_contato{
     padding: 20px;
     width: 50px;
+}
+
+#link_contato{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
 }
