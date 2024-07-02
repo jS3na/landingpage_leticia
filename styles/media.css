@@ -114,15 +114,43 @@
         border-radius: 100px;
     }
 
-    #saiba_mais{
-        margin: 15px;
+    .animated-border-button {
+        margin: 15px auto;
         margin-top: 27px;
+        position: relative;
+        padding: 10px 20px;
+        font-size: 20px;
+        color: #fff;
         background-color: #ff0037;
         width: 190px;
         height: 60px;
-        font-size: large;
-        color: white;
-        border-radius: 15px;
+        border: 2px solid transparent;
+        cursor: pointer;
+        outline: none;
+        z-index: 1;
+        transition: color 0.3s, background-color 0.3s;
+        border-radius: 35px;
+        box-shadow: 10px #000;
+    }
+    
+    .animated-border-button::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        border-radius: 5px;
+        background: linear-gradient(90deg, #582430, #ff003c, #582430, #ff003c);
+        z-index: -1;
+        background-size: 300%;
+        border-radius: 35px;
+        animation: rotate 6s linear infinite;
+    }
+    
+    .animated-border-button:hover {
+        color: #ffffff;
+        background-color: #fff;
     }
 
     #h2_entrada {
